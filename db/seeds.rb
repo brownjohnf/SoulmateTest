@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+File.open(File.join(Rails.root, "lib", "assets", "wordsEn.txt"), "r") do |file|
+  while line = file.gets
+    Word.create(:word => line[0..-3])
+  end
+end

@@ -6,7 +6,9 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'soulmate'
+gem 'faker'
+gem 'haml-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,7 +22,18 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'awesome_print', :require => 'ap'
+  gem 'sextant'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+end
+
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
