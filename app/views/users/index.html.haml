@@ -1,3 +1,12 @@
 %h1 Users
+%hr
 
-= text_field_tag 'user'
+- if @user
+  %p You have selected:
+  %h2= link_to @user.name, @user
+  %p Or, select another user below.
+
+%hr
+= form_tag users_path, :method => :get do |f|
+  = text_field :user, 'name'
+  = submit_tag
