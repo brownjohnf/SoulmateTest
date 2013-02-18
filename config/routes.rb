@@ -1,7 +1,15 @@
 SoulmateTest::Application.routes.draw do
-  get "words/index"
+  resources :users, :only => [ :index ] do
+    collection do
+      get :autocomplete
+    end
+  end
 
-  get "words/autocomplete"
+  resources :words, :only => [ :index, :show ] do
+    collection do
+      get :autocomplete
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
