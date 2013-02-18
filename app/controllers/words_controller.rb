@@ -1,6 +1,7 @@
 class WordsController < ApplicationController
   # GET /words
   def index
+    @word = Word.find_by_word(params[:word][:word])
   end
 
   # GET /words/:id

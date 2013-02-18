@@ -1,4 +1,12 @@
 %h1 Words
+%hr
 
-= form_tag do
-  = text_field_tag 'word'
+- if @word
+  %p You have selected:
+  %h2= @word.word
+  %p Or, select another word below.
+
+%hr
+= form_tag words_path, :method => :get do |f|
+  = text_field :word, 'word'
+  = submit_tag
