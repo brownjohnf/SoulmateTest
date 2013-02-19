@@ -1,5 +1,5 @@
 SoulmateTest::Application.routes.draw do
-  resources :users, :only => [ :index, :show ] do
+  resources :users, :only => [ :index, :show, :edit, :update ] do
     collection do
       get :autocomplete
     end

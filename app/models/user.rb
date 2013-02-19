@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
 
   def do_after_save
     loader = Soulmate::Loader.new('users')
-    loader.add('term' => name, 'id' => id)
+    loader.add('term' => name, 'score' => age, 'id' => id)
   end
 end
